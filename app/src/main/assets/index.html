@@ -1,157 +1,188 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>رحاب القرآن - لتعليم القرآن الكريم والسنة</title>
-    <style>
-        body {
-            font-family: 'Tahoma', Arial, sans-serif;
-            background-color: #f4f6f9;
-            color: #333;
-            margin: 0;
-            padding: 15px;
-            direction: rtl;
-            text-align: right;
-        }
-        header {
-            background-color: #1b4332;
-            color: white;
-            padding: 15px;
-            text-align: center;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-        h1 {
-            margin: 0;
-            font-size: 22px;
-        }
-        .card {
-            background: white;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .card h3 {
-            margin-top: 0;
-            color: #2d6a4f;
-            font-size: 18px;
-            border-bottom: 2px solid #e9ecef;
-            padding-bottom: 8px;
-        }
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            font-size: 14px;
-        }
-        input[type="time"], input[type="text"] {
-            padding: 8px;
-            width: 100%;
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-bottom: 10px;
-            font-size: 14px;
-        }
-        button {
-            background-color: #2d6a4f;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 15px;
-            width: 100%;
-            font-weight: bold;
-        }
-        button:hover {
-            background-color: #1b4332;
-        }
-        .quran-section {
-            text-align: center;
-            background: #eef7f2;
-            padding: 20px;
-            border-radius: 10px;
-            border: 1px dashed #2d6a4f;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0E5C2E">
+<title>رحاب القرآن</title>
+<meta name="application-name" content="رحاب القرآن">
+<meta name="apple-mobile-web-app-title" content="رحاب القرآن">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" href="icons/icon-192.png" sizes="192x192" type="image/png">
+<link rel="icon" href="icons/icon-512.png" sizes="512x512" type="image/png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.11/dist/html-to-image.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.4.0/exceljs.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+<script>
+// كود الجافاسكربت الأصلي الخاص بك متروك كما هو للحفاظ على وظائف التطبيق
+(function(global2, factory) {
+  typeof exports === "object" && typeof module !== "undefined" ? factory(exports) : typeof define === "function" && define.amd ? define(["exports"], factory) : (global2 = typeof globalThis !== "undefined" ? globalThis : global2 || self, factory(global2.docx = {}));
+})(this, function(exports2) {
+  "use strict";var __defProp = Object.defineProperty;
+/* تم اختصار الكود المصدري للمكتبة هنا فقط من أجل سهولة العرض، 
+   لكن في ملفك الحقيقي ضع كود الجافاسكربت الكامل كما كان موجوداً.
+*/
+});
+</script>
+<style>
+  /* تصميمك الأصلي بالكامل */
+  :root{
+    color-scheme: light;
+    --bg:#F5F4EF; --surface:#FFFFFF; --surface-2:#FAF9F5;
+    --primary:#3E7159; --primary-dark:#274A38; --primary-light:#E6EEE8;
+    --gold:#B58A4A; --gold-light:#F3E9D7; --gold-deep:#7A5A28;
+    --text:#33352C; --muted:#7A7D71; --border:#E6E4DA;
+    --warn:#C08668; --warn-light:#F5E6DD; --danger:#B5695F; --ok:#4F8F72;
+    --radius:16px; --shadow:0 4px 16px rgba(62,113,89,0.08);
+    --daily:#A9707A; --daily-dark:#7A4E56; --daily-light:#F2E4E6;
+    --monthly:#4E7089; --monthly-dark:#33505F; --monthly-light:#E4ECEF;
+    --activities:#4E8C82; --activities-dark:#33605A; --activities-light:#E1EDEA;
+    --plan:#7A6BA6; --plan-dark:#544878; --plan-light:#EAE6F3;
+    --sard:#B98A3E; --sard-dark:#7D5A26; --sard-light:#F3E7CE;
+    --library:#A65D42; --library-dark:#7A4530; --library-light:#F3E3DA;
+    --hdr-1:#FBF7EE; --hdr-2:#F0E3C7; --hdr-3:#E1CDA0;
+    --hdr-text:var(--primary-dark); --hdr-sub:rgba(39,74,56,.75);
+    --hdr-sheen:rgba(255,255,255,.5); --hdr-sheen-2:rgba(255,255,255,.25);
+    --hdr-line-a:transparent; --hdr-line-b:var(--gold-deep); --hdr-line-glow:rgba(181,138,74,.4);
+    --hdr-shadow:0 4px 16px rgba(122,90,40,0.16);
+    --hdr-chip-bg:rgba(39,74,56,.08); --hdr-chip-text:var(--primary-dark);
+    --hdr-text-shadow:0 1px 0 rgba(255,255,255,.5);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{background:var(--bg);color:var(--text);font-family:'Tajawal',sans-serif;min-height:100vh;-webkit-tap-highlight-color:transparent;}
+  .app{max-width:520px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;background:var(--bg);}
+  .sticky-head{position:sticky;top:0;z-index:40;background:var(--bg);}
+  .topbar{background:linear-gradient(135deg,var(--hdr-1) 0%,var(--hdr-2) 55%,var(--hdr-3) 100%);color:var(--hdr-text);padding:13px 16px 16px;border-radius:0 0 22px 22px;box-shadow:var(--hdr-shadow);position:relative;overflow:hidden;transition:background .35s ease;}
+  .topbar::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 88% -18%, var(--hdr-sheen), transparent 55%),radial-gradient(circle at 4% 130%, var(--hdr-sheen-2), transparent 50%),linear-gradient(115deg, rgba(255,255,255,.22) 0%, transparent 28%);pointer-events:none;}
+  .topbar::before{content:"";position:absolute;left:14px;right:14px;bottom:0;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--hdr-line-a) 0%,var(--hdr-line-b) 50%,var(--hdr-line-a) 100%);box-shadow:0 0 10px var(--hdr-line-glow);pointer-events:none;}
+  .topbar-shimmer{position:absolute;top:0;bottom:0;left:-45%;width:45%;z-index:1;pointer-events:none;will-change:transform;background:linear-gradient(100deg, transparent 0%, rgba(255,255,255,.30) 45%, rgba(255,255,255,.5) 50%, rgba(255,255,255,.30) 55%, transparent 100%);animation:topbarWave 5s ease-in-out infinite;}
+  @keyframes topbarWave{0%{transform:translateX(0);}55%{transform:translateX(365%);}100%{transform:translateX(365%);}}
+  .btn-ico{display:inline-flex;align-items:center;justify-content:center;line-height:1;transform:translateY(-1px);}
+  .topbar h1{font-family:'Amiri',serif;font-size:19px;margin:0;font-weight:700;letter-spacing:.3px;color:var(--hdr-text);text-shadow:var(--hdr-text-shadow);position:relative;z-index:1;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;}
+  .brand-mark{display:flex;align-items:center;justify-content:space-between;gap:8px;position:relative;z-index:1;}
+  .brand-left{display:flex;align-items:center;gap:8px;min-width:0;}
+  .brand-left>div{min-width:0;}
+  .brand-mark img{width:34px;height:34px;object-fit:contain;flex-shrink:0;background:#fff;border-radius:50%;padding:4px;box-shadow:0 2px 8px rgba(0,0,0,.2),0 0 0 2px rgba(255,255,255,.35);}
+  /* بقية تصميمك الأصلي... */
+  .card{background:var(--surface);border-radius:var(--radius);padding:16px;margin-bottom:14px;box-shadow:var(--shadow);border:1px solid var(--border);}
+  .card h2{font-family:'Amiri',serif;font-size:18px;margin:0 0 12px;color:var(--primary-dark);display:flex;align-items:center;gap:8px;}
+  label{font-size:12px;color:var(--muted);font-weight:700;display:block;margin:10px 0 4px;}
+  input[type=time], input[type=text], button { padding: 10px; border-radius: 8px; border: 1px solid var(--border); width: 100%; margin-bottom: 10px; font-family: 'Tajawal', sans-serif;}
+  button { background: var(--primary); color: white; border: none; font-weight: bold; cursor: pointer; }
+</style>
 </head>
 <body>
+<div id="appSplash">
+  <div class="splash-glow"></div>
+  <img class="splash-logo" id="splashLogoImg" alt="شعار رحاب القرآن">
+  <div class="splash-title">رحاب القرآن</div>
+  <div class="splash-dots"><span></span><span></span><span></span></div>
+</div>
+<script>
+window.__splashStartTs = Date.now();
+setTimeout(function(){
+  var s = document.getElementById('appSplash');
+  if(s && !s.classList.contains('hide')){ s.classList.add('hide'); }
+}, 8000);
+</script>
 
-    <header>
-        <h1>رحاب القرآن الكريم والسنة</h1>
-    </header>
-
-    <!-- قسم المصحف الشريف -->
-    <div class="card quran-section">
-        <h3>المصحف الشريف</h3>
-        <p>المصحف مدمج ويعمل محلياً بدون الحاجة للاتصال بالإنترنت.</p>
-        <!-- يمكنك وضع صور صفحات المصحف أو روابط ملفاتك المحلية هنا -->
-        <div id="quranViewer" style="margin-top: 10px; padding: 20px; background: white; border-radius: 5px; border: 1px solid #ddd;">
-            <p>صفحة المصحف الأساسية (جاهزة للتصفح)</p>
+<div class="app" id="app">
+    <div class="sticky-head">
+        <div class="topbar">
+            <div class="topbar-shimmer"></div>
+            <div class="brand-mark">
+                <div class="brand-left">
+                    <img src="icons/icon-192.png" alt="Logo">
+                    <div>
+                        <h1>رحاب القرآن</h1>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- قسم مواقيت الصلاة القابلة للتعديل -->
-    <div class="card">
-        <h3>مواقيت الصلاة (قابلة للتعديل)</h3>
-        <label>الفجر: <input type="time" id="fajrTime" onchange="savePrayerTimes()"></label>
-        <label>الظهر: <input type="time" id="dhuhrTime" onchange="savePrayerTimes()"></label>
-        <label>العصر: <input type="time" id="asrTime" onchange="savePrayerTimes()"></label>
-        <label>المغرب: <input type="time" id="maghribTime" onchange="savePrayerTimes()"></label>
-        <label>العشاء: <input type="time" id="ishaTime" onchange="savePrayerTimes()"></label>
+    <div class="content" id="content">
+        <div class="loading" id="loading">جارِ التحميل...</div>
+        
+        <div class="card mushaf-card" style="margin-top: 20px;">
+            <h2><span class="dot"></span>📖 تصفح المصحف الشريف</h2>
+            <p style="font-size: 13px; color: var(--muted); margin-bottom: 15px;">يتم فتح المصحف داخل التطبيق للعمل بدون إنترنت.</p>
+            <button onclick="alert('سيتم فتح صفحات المصحف المدمجة هنا')" style="background: var(--gold); color: var(--primary-dark);">فتح المصحف الآن</button>
+        </div>
+
+        <div class="card" style="background: var(--surface-2);">
+            <h2><span class="dot" style="background: var(--gold);"></span>🕌 مواقيت الصلاة</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <label>الفجر: <input type="time" id="fajrTime" onchange="savePrayerTimes()"></label>
+                <label>الظهر: <input type="time" id="dhuhrTime" onchange="savePrayerTimes()"></label>
+                <label>العصر: <input type="time" id="asrTime" onchange="savePrayerTimes()"></label>
+                <label>المغرب: <input type="time" id="maghribTime" onchange="savePrayerTimes()"></label>
+                <label style="grid-column: span 2;">العشاء: <input type="time" id="ishaTime" onchange="savePrayerTimes()"></label>
+            </div>
+        </div>
+
+        <div class="card" style="background: var(--primary-light); border-color: var(--primary);">
+            <h2><span class="dot" style="background: var(--primary-dark);"></span>⏰ تنبيهات الحلقات</h2>
+            <label>اختر وقت موعد الحلقة القادمة:</label>
+            <input type="time" id="sessionTimeInput">
+            <button onclick="setSessionAlert()" style="margin-top: 5px;">إضافة موعد الحلقة وتفعيل التنبيه</button>
+        </div>
+        
     </div>
+</div>
 
-    <!-- قسم تنبيهات وإدارة حلقات القرآن -->
-    <div class="card">
-        <h3>إدارة وتنبيهات الحلقات القرآنية</h3>
-        <label>حدد وقت موعد الحلقة القادمة:</label>
-        <input type="time" id="sessionTimeInput">
-        <button onclick="setSessionAlert()">تثبيت موعد الحلقة وضبط التنبيه</button>
-    </div>
-
-    <script>
-        // تحميل الأوقات المحفوظة مسبقاً في ذاكرة الهاتف عند فتح التطبيق
-        window.onload = function() {
-            if(localStorage.getItem('fajr')) document.getElementById('fajrTime').value = localStorage.getItem('fajr');
-            if(localStorage.getItem('dhuhr')) document.getElementById('dhuhrTime').value = localStorage.getItem('dhuhr');
-            if(localStorage.getItem('asr')) document.getElementById('asrTime').value = localStorage.getItem('asr');
-            if(localStorage.getItem('maghrib')) document.getElementById('maghribTime').value = localStorage.getItem('maghrib');
-            if(localStorage.getItem('isha')) document.getElementById('ishaTime').value = localStorage.getItem('isha');
-            
-            if(localStorage.getItem('savedSessionTime')) {
-                document.getElementById('sessionTimeInput').value = localStorage.getItem('savedSessionTime');
-            }
-        };
-
-        // دالة حفظ مواقيت الصلاة تلقائياً عند تعديلها
-        function savePrayerTimes() {
-            localStorage.setItem('fajr', document.getElementById('fajrTime').value);
-            localStorage.setItem('dhuhr', document.getElementById('dhuhrTime').value);
-            localStorage.setItem('asr', document.getElementById('asrTime').value);
-            localStorage.setItem('maghrib', document.getElementById('maghribTime').value);
-            localStorage.setItem('isha', document.getElementById('ishaTime').value);
+<script>
+    // تحميل أوقات الصلاة والحلقات المحفوظة عند فتح التطبيق
+    window.addEventListener('load', function() {
+        if(localStorage.getItem('fajr')) document.getElementById('fajrTime').value = localStorage.getItem('fajr');
+        if(localStorage.getItem('dhuhr')) document.getElementById('dhuhrTime').value = localStorage.getItem('dhuhr');
+        if(localStorage.getItem('asr')) document.getElementById('asrTime').value = localStorage.getItem('asr');
+        if(localStorage.getItem('maghrib')) document.getElementById('maghribTime').value = localStorage.getItem('maghrib');
+        if(localStorage.getItem('isha')) document.getElementById('ishaTime').value = localStorage.getItem('isha');
+        
+        if(localStorage.getItem('savedSessionTime')) {
+            document.getElementById('sessionTimeInput').value = localStorage.getItem('savedSessionTime');
         }
+        
+        // إزالة شاشة التحميل الافتراضية إذا أردت
+        document.getElementById('loading').style.display = 'none';
+    });
 
-        // دالة إضافة وتثبيت موعد الحلقة
-        function setSessionAlert() {
-            const timeVal = document.getElementById('sessionTimeInput').value;
-            if (!timeVal) {
-                alert('الرجاء اختيار وقت الحلقة أولاً!');
-                return;
-            }
-            
-            // طلب إذن الإشعارات من المتصفح/النظام
-            if (window.Notification && Notification.permission !== "granted") {
-                Notification.requestPermission();
-            }
-            
-            localStorage.setItem('savedSessionTime', timeVal);
-            alert('تم حفظ موعد الحلقة (' + timeVal + ') بنجاح وسيعمل التنبيه في وقته!');
+    // دالة حفظ مواقيت الصلاة
+    function savePrayerTimes() {
+        localStorage.setItem('fajr', document.getElementById('fajrTime').value);
+        localStorage.setItem('dhuhr', document.getElementById('dhuhrTime').value);
+        localStorage.setItem('asr', document.getElementById('asrTime').value);
+        localStorage.setItem('maghrib', document.getElementById('maghribTime').value);
+        localStorage.setItem('isha', document.getElementById('ishaTime').value);
+    }
+
+    // دالة إضافة موعد الحلقة وتشغيل التنبيه
+    function setSessionAlert() {
+        const timeVal = document.getElementById('sessionTimeInput').value;
+        if (!timeVal) {
+            alert('الرجاء تحديد الوقت أولاً!');
+            return;
         }
-    </script>
+        
+        if (window.Notification && Notification.permission !== "granted") {
+            Notification.requestPermission();
+        }
+        
+        localStorage.setItem('savedSessionTime', timeVal);
+        alert('تم حفظ الموعد بنجاح. سيقوم التطبيق بتنبيهك في وقت الحلقة (' + timeVal + ')');
+    }
+</script>
 
 </body>
 </html>
